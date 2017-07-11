@@ -1,0 +1,33 @@
+{
+  "name": "javascript-unit-testing",
+  "version": "1.0.0",
+  "description": "Pruebas unitarias con Karma, Jasmine, Mocha, Jest, Chai...",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lenin-anzen/javascript-unit-testing.git"
+  },
+  "keywords": [
+    "javascript",
+    "karma",
+    "jasmine",
+    "jest",
+    "mocha",
+    "chai"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lenin-anzen/javascript-unit-testing/issues"
+  },
+  "homepage": "https://github.com/lenin-anzen/javascript-unit-testing#readme",
+  "devDependencies": {
+    "eslint": "^4.2.0"
+  }
+}
