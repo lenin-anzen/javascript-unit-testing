@@ -9,8 +9,9 @@
     <!-- CSS  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css" integrity="sha256-oiVjjd5Fuot9f/fgwH5IBBjsOA7TDdcfSK5I2EZ0zMw=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
-    <link href="https://cdn.jsdelivr.net/waves/0.7.5/waves.min.css" type="text/css" rel="stylesheet">
-    <link href="assets/css/style.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/waves/0.7.5/waves.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -33,20 +34,20 @@
     <nav id="nav_f" class="default_color" role="navigation">
         <div class="container">
             <div class="nav-wrapper">
-            <a href="#" id="logo-container" class="brand-logo">Unit Testing</a>
+                <a href="#" id="logo-container" class="brand-logo">Unit Testing</a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="#intro">Service</a></li>
                 </ul>
                 <ul id="nav-mobile" class="side-nav">
                     <li><a href="#intro">Service</a></li>
                 </ul>
-            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+                <a href="#" data-activates="nav-mobile" class="button-collapse top-nav waves-effect waves-light circle hide-on-large-only"><i class="material-icons">menu</i></a>
             </div>
         </div>
     </nav>
 </div>
 
-<!--Hero-->
+<!-- Hero Header -->
 <div class="section no-pad-bot" id="index-banner">
     <div class="container">
         <h1 class="text_h center header cd-headline letters type">
@@ -62,18 +63,148 @@
     </div>
 </div>
 
-<!--Intro and service-->
+<!-- Intro text -->
 <div id="intro" class="section scrollspy">
     <div class="container">
         <div class="row">
-            <div  class="col s12">
-                <h2 class="center header text_h2"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span class="span_h2"> Phasellus  </span>vestibulum lorem risus, nec suscipit lorem <span class="span_h2"> laoreet quis.</span> </h2>
+            <div class="col s12">
+                <h2 class="center header text_h2">Escribir la <span class="span_h2">matriz de pruebas</span>, desarrollar las <span class="span_h2">pruebas unitarias</span> basados en esa matriz y, posteriormente, <span class="span_h2">ejecutar</span> las pruebas, nos ayudará a comprobar que nuestra aplicación <span class="span_h2">funciona correctamente</span>.</h2>
             </div>
         </div>
     </div>
 </div>
 
+<!-- Jasmine -->
+<div id="jasmine" class="section scrollspy">
+    <div class="container">
+        <h2 class="header text_b"><a href="https://jasmine.github.io/" target="_blank" title="Jasmine">Jasmine</a></h2>
+        <div class="row">
+            <div class="col s12 m12">
+                <p>Es un framework basado en el comportamiento para probar código. Funciona en modo <a href="https://github.com/jasmine/jasmine#installation" target="_blank" title="">standalone en el navegador</a>, con <a href="https://github.com/jasmine/jasmine-gem" target="_blank" title="Ruby Gem">Ruby</a>, con <a href="https://github.com/jasmine/jasmine-py" target="_blank" title="Python Egg">Python</a> y, por supuesto, en <a href="https://github.com/jasmine/jasmine-npm" target="_blank" title="NPM module">NodeJs</a>.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s6 m6">
+                <p>Para instalarlo en nuestro proyecto:</p>
+            </div>
+            <div class="col s6 m6">
+                <pre>npm install --save-dev jasmine</pre>
+            </div>
+            <div class="col s6 m6">
+                <p>Agregar/Inicializar configuración:</p>
+                <p>Esto generará el archivo <i>spec/support/jasmine.json</i></p>
+            </div>
+            <div class="col s6 m6">
+                <pre>./node_modules/.bin/jasmine init</pre>
+            </div>
+            <div class="col s6 m6">
+                <p>Modificar el archivo <srong>package.json</srong> y agregar el script de pruebas:</p>
+            </div>
+            <div class="col s6 m6">
+                <pre>"scripts": {
+    "test": "jasmine"
+  }</pre>
+            </div>
+            <div class="col s6 m6">
+                <p>Se pueden crear ejemplos de pruebas mediante:</p>
+            </div>
+            <div class="col s6 m6">
+                <pre>./node_modules/.bin/jasmine examples</pre>
+            </div>
+            <div class="col s6 m6">
+                <p>Ejecutar pruebas mediante NPM y el script test:</p>
+            </div>
+            <div class="col s6 m6">
+                <pre>npm test</pre>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m12">
+                <p>Para crear nuestra primera prueba, debemos crear un archivo dentro del directorio "spec", el sufijo y la extensión deben ser "spec.js" o "Spec.js".</p>
+                <p>Ejemplo del archivo "spec/tests/prueba1Spec.js"</p>
+                <pre>describe("Mi grupo de pruebas", function() {
+  it("Si verdadero es igual a verdadero:", function() {
+    expect(true).toBe(true);
+  });
+  
+  it("Si verdadero es igual a falso:", function() {
+    expect(true).toBe(false);
+  });
+});</pre>
+            </div>
+            <div class="col s6 m6">
+                <p>Volvemos a ejecutar la prueba:</p>
+            </div>
+            <div class="col s6 m6">
+                <pre>npm test</pre>
+            </div>
+            <div class="col s12 m12">
+                <p>El resultado de la prueba será:</p>
+                <pre>> jasmine-test1@1.0.0 test ~\jasmine-test1
+> jasmine
 
+Started
+......F
+
+Failures:
+1) Mi grupo de pruebas Si verdadero es igual a falso:
+  Message:
+    Expected true to be false.
+  Stack:
+    Error: Expected true to be false.
+        at Object.<anonymous> (~\jasmine-test1\spec\tests\prueba1Spec.js:7:18)
+
+7 specs, 1 failure
+Finished in 0.017 seconds
+
+npm ERR! Test failed.  See above for more details.</pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Karma -->
+<div id="karma" class="section scrollspy">
+    <div class="container">
+        <h2 class="header text_b"><a href="http://karma-runner.github.io/" target="_blank" title="Karma">Karma</a></h2>
+        <div class="row">
+            <div class="col s12">
+                <div class="col s12 m12">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--  -->
+<div id="work" class="section scrollspy">
+    <div class="container">
+        <h2 class="header text_b"><a href="" target="_blank" title=""></a></h2>
+        <div class="row">
+            <div class="col s12">
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--  -->
+<div id="references" class="section scrollspy">
+    <div class="container">
+        <h2 class="header text_b">Referencias</h2>
+        <div class="row">
+            <div class="col s12">
+                <ol>
+                    <li><p><a href="https://scotch.io/tutorials/testing-angularjs-with-jasmine-and-karma-part-1" target="_blank" title="Testing AngularJS with Jasmine and Karma (Part 1)">Testing AngularJS with Jasmine and Karma (Part 1)</a></p></li>
+                    <li><p><a href="" target="_blank" title=""></a></p></li>
+                    <li><p><a href="" target="_blank" title=""></a></p></li>
+                    <li><p><a href="" target="_blank" title=""></a></p></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!--Footer-->
 <footer id="contact" class="page-footer default_color scrollspy">
@@ -82,7 +213,7 @@
     </div>
     <div class="footer-copyright default_color">
         <div class="container">
-            Made with 💜 by <a target="_blank" class="white-text" href="https://travis-ci.org/lenin-anzen">Lenin Meza</a>. Thanks to <a class="white-text" href="http://materializecss.com/">materializecss</a>
+            Made with 💜 by <a class="white-text" href="https://travis-ci.org/lenin-anzen" target="_blank" title="Lenin Meza">Lenin Meza</a>. Thanks to <a class="white-text" href="http://materializecss.com/" target="_blank" title="Materialize">Materialize</a>
         </div>
     </div>
 </footer>
